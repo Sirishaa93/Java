@@ -1,0 +1,32 @@
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
+
+        while (t-- > 0) {
+            String line = sc.nextLine();
+
+            boolean found = false;
+
+            // regex to match valid tags
+            Pattern pattern = Pattern.compile("<(.+?)>([^<>]+)</\\1>");
+            Matcher matcher = pattern.matcher(line);
+
+            while (matcher.find()) {
+                System.out.println(matcher.group(2));
+                found = true;
+            }
+
+            if (!found) {
+                System.out.println("None");
+            }
+        }
+
+        sc.close();
+    }
+}
