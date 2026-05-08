@@ -1,0 +1,24 @@
+import java.util.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Read big numbers as strings
+        BigInteger a = new BigInteger(sc.nextLine());
+        BigInteger b = new BigInteger(sc.nextLine());
+
+        // Perform operations
+        BigInteger sum = a.add(b);
+        BigInteger product = a.multiply(b);
+
+        // Output results
+        System.out.println(sum);
+        System.out.println(product);
+
+        sc.close();
+    }
+}
